@@ -1,7 +1,9 @@
 import ReactDOM from "react-dom/client";
-import Title from "./App.jsx";
+// import Title from "./App.jsx";
+import { HeadingComponents, Title } from "./App.jsx";
 import React from "react";
 
-const root = ReactDOM.createRoot(document.querySelector("#root"));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<Title />);
+root.render([<Title />,<HeadingComponents/>]);
+// root.render(<HeadingComponents />);
