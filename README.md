@@ -30,8 +30,10 @@
   ```
 
 - React Component are two types of Component
+
   1.  Class Based Component - OLD
   2.  Functional Component - NEW
+
   - Class Based component is OLD way
   - Functional component is NEW way
     -Example
@@ -72,3 +74,89 @@
     ```jsx
     root.render(JSX);
     ```
+  - if we composition 2 components in once in another it's call **_Component Composition_**
+  - Example
+
+  ```jsx
+  // This is functional component 'List' that we use in another component
+  const List = () => {
+    return (
+      <ul>
+        <li>Html</li>
+        <li>Css</li>
+        <li>JavaScript</li>
+      </ul>
+    );
+  };
+
+  const HeadingComponents = () => {
+    return (
+      <div id="container">
+        <h1 className="heading">nm React functional Component</h1>
+        // We used List component in HeadingComponents so it's called Component Composition
+        <List />
+      </div>
+    );
+  };
+  ```
+
+  - React Element using in functional component
+  - Example
+
+  ```jsx
+  return (
+    <div id="container">
+      // in {} curly brackets you can run any pcs of javaScript code or React
+      Element // in This example i used a number variable to show on my webPage
+      {number}
+      <h1 className="heading">nm React functional Component</h1>
+      <List />
+    </div>
+  );
+  ```
+
+  - I can use React Element in another React Element. In the end of the day React element is a like javaScript Variable
+  - Example
+
+  ```jsx
+  // I created a element Variable to inject in another React Element
+  const element = <li>React Js</li>;
+
+  const ulList = (
+    <ul>
+      <li>Html</li>
+      <li>Css</li>
+      <li>JavaScript</li>
+      // In here i Injected the Variable inside another variable
+      {element}
+    </ul>
+  );
+  // In here we can render ulList React elment like this, means directly not inside {ulList} or not like <ulList />
+  // if we use like {ulList} this then it will return object not treate like jsx so it would't render.
+  const List = () => ulList;
+  // if we want to {ulList} like this then we direct put to jsx code first
+  // Example
+  const List = () => {
+    return <div>{ulList}</div>;
+  };
+  ```
+
+  - These types to i can exicute my code
+
+  ```jsx
+  const HeadingComponents = () => {
+    return (
+      <div id="container">
+        {number}
+        <h1 className="heading">nm React functional Component</h1>
+        // first like a normal javascript function. in the end of the day it's a
+        // normal javaScript function
+        {List()}
+        // second like function component
+        <List />
+        // third like a html tag, these three ways are same
+        <List></List>
+      </div>
+    );
+  };
+  ```
