@@ -160,3 +160,19 @@
     );
   };
   ```
+## 
+- We Created a Website memo that we will create as a project.
+    - /**
+     * Header
+     *  - logo
+     *  - nav items
+     * Body
+     *  - search
+     *  - ReasturentContainer
+     *     - ReasturentCart
+     * Footer
+     *  - copyright
+     *  - links
+     *  - Adress
+     *  - contact
+     */
